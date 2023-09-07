@@ -5,5 +5,7 @@ const mav = new User({
   age: 24,
 });
 
+mav.set({ name: 'Maverick Mitchell' });
+
 console.log(mav.get('name'));
 console.log(mav.get('age'));
