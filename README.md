@@ -2,7 +2,6 @@
 
 ```bash
 git clone # ...
-nvm use
-npm i
-npm start
+yarn
+npx parcel index.html
 ```
