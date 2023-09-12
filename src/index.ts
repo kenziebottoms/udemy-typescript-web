@@ -1,20 +1,8 @@
 import { User } from './models/User';
 
-const mav = new User({
-  name: 'Pete Mitchell',
-  age: 24,
-});
+const user = new User({ id: 1 });
+user.set({ name: 'New Rip', age: 29 });
+user.save();
 
-mav.on('change', () => {
-  console.log('change #1');
-});
-mav.on('change', () => {
-  console.log('change #2');
-});
-mav.on('save', () => {
-  console.log('save');
-});
-
-mav.trigger('save');
-mav.trigger('change');
-mav.trigger('other');
+const newUser = new User({ name: 'Maverick', age: 24 });
+newUser.save();
