@@ -1,8 +1,10 @@
 import { User } from './models/User';
 
-const user = new User({ id: 2, name: 'Maverick Mitchell' });
+const user = User.buildUser({ id: 2, name: 'Maverick Mitchell' });
 
-user.on('save', () => {
+user.on('change', () => {
   console.log(user);
 });
-user.save();
+user.fetch();
+
+console.log(user.isAdminUser());
