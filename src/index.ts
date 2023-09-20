@@ -1,10 +1,7 @@
-import { User } from './models/User';
+import { Collection } from './models/Collection';
 
-const user = User.buildUser({ id: 2, name: 'Maverick Mitchell' });
-
-user.on('change', () => {
-  console.log(user);
+const collection = new Collection('http://localhost:3000/users');
+collection.on('change', () => {
+  console.log(collection.models);
 });
-user.fetch();
-
-console.log(user.isAdminUser());
+collection.fetch();
