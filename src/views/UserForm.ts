@@ -1,7 +1,7 @@
 import { User } from '../models/User';
 
 export class UserForm {
-  constructor(public parent: HTMLElement | null, public model: User) {
+  constructor(public parent: HTMLElement, public model: User) {
     this.bindModel();
   }
 
@@ -20,9 +20,11 @@ export class UserForm {
     this.model.setRandomAge();
   };
   onSetNameClick = (): void => {
-    const input = this.parent?.querySelector('input');
-    const name = input?.value || '';
-    this.model.set({ name });
+    const input = this.parent.querySelector('input');
+    if (input) {
+      const name = input.value || '';
+      this.model.set({ name });
+    }
   };
 
   template(): string {
