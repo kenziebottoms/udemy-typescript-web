@@ -20,8 +20,8 @@ export class User extends Model<UserProps> {
     );
   }
 
-  isAdminUser(): boolean {
-    return this.get('id') === 1;
+  setRandomAge(): void {
+    this.set({ age: Math.round(Math.random() * 100) });
   }
 
   static buildUserCollection(): Collection<User, UserProps> {
